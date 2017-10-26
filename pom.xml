@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+
+        <groupId>TMS_Automation</groupId>
+        <artifactId>TMS_Automation</artifactId>
+        <version>0.0.1</version>
+
+    <properties>
+        <selenium.version>3.6.0</selenium.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- log4j dependency -->
+		
+        <!--log4j-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+        <!--SQL Server JDBS Drivers-->	
+        <dependency>
+            <groupId>com.microsoft</groupId>
+            <artifactId>stupidlicense</artifactId>
+            <version>4.0.2206.100</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/sqljdbc4.jar</systemPath>
+        </dependency>
+		
+
+
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+        <!--slf4j-log4j12-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+
+
+        <!-- Selenium Java dependency -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jetty-websocket</artifactId>
+                    <groupId>org.eclipse.jetty</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+		
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.2.1</version>
+            <!-- <scope>test</scope>
+            this will _always_ be behind -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-remote-driver</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <!-- TestNG dependency -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8</version>
+            <type>jar</type>
+        </dependency>
+
+        <!-- JXL Libraries dependency for Datadriven spreadsheets -->
+        <dependency>
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+            <version>2.6.12</version>
+        </dependency>
+
+        <!-- opencsv library for csv file formats -->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>4.0</version>
+        </dependency>
+
+        <!-- Cucumber dependencies -->
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.4</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>0.2.1</version>
+        </dependency>
+		
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
+
+
+  
+
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio-java-sdk</artifactId>
+            <version>(6.0,6.9)</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>9.4.0.RC2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>9.4.0.RC2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>9.4.0.RC2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3</version>
+            <type>jar</type>
+        </dependency>
+		<dependency>
+			<groupId>com.googlecode.libphonenumber</groupId>
+			<artifactId>libphonenumber</artifactId>
+			<version>7.7.1</version>
+		</dependency>
+
+   
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_core</artifactId>
+            <version>3.3</version>
+        </dependency>
+    </dependencies>
+
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!-- 2.8.0-01 and later require maven-compiler-plugin 3.1 or higher -->
+                <version>3.1</version>
+                <configuration>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>2.9.2-01</version>
+                    </dependency>
+                    <!-- for 2.8.0-01 and later you must have an explicit dependency on groovy-eclipse-batch -->
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-batch</artifactId>
+                        <version>2.4.3-01</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/groovy</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-test-source</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/test/groovy</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <!-- get all project dependencies -->
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+               
+
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <!-- bind to the packaging phase -->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+</plugins>
+  </build>
+
+    <profiles>
+	
+	
+	
+	
+        <!--Archive_Reports-->
+        <profile>
+            <id>Archive_Reports</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.16</version>
+                        <executions>
+                            <execution>
+                                <id>ArchiveOldReports</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <configuration>
+                                    <testFailureIgnore>true</testFailureIgnore>
+                                    <includes>
+                                        <include>**/ArchiveReports.class</include>
+                                    </includes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+        <!--Delete_Reports-->
+        <profile>
+            <id>Delete_Reports</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <version>2.6.1</version>
+                        <executions>
+                            <execution>
+                                <id>CleanReports</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                                <configuration>
+                                    <filesets>
+                                        <fileset>
+                                            <directory>${basedir}/Automation Reports</directory>
+                                        </fileset>
+                                    </filesets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!--Delete_Reports-->
+        <profile>
+            <id>Delete_TargetReports</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <version>2.6.1</version>
+                        <executions>
+                            <execution>
+                                <id>CleanReports</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                                <configuration>
+                                    <filesets>
+                                        <fileset>
+                                            <directory>${basedir}/Target</directory>
+                                        </fileset>
+                                    </filesets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+        <!--DownloadSeleniumBinaries-->
+        <profile>
+            <id>DownloadSeleniumBinaries</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.lazerycode.selenium</groupId>
+                        <artifactId>driver-binary-downloader-maven-plugin</artifactId>
+                        <version>1.0.7</version>
+                        <configuration>
+                            <!-- root directory that downloaded driver binaries will be stored 
+                            in -->
+                            <rootStandaloneServerDirectory>${basedir}/SeleniumDownloads/binaries</rootStandaloneServerDirectory>
+                            <!-- Where you want to store downloaded zip files -->
+                            <downloadedZipFileDirectory>${basedir}/SeleniumDownloads/zips</downloadedZipFileDirectory>
+                            <!-- Location of a custom repository map -->
+                            <customRepositoryMap>src/test/resources/RepositoryMap.xml</customRepositoryMap>
+                            <!-- This will ensure that the plugin only downloads binaries for 
+                            the current OS, this will override anything specified in the <operatingSystems> 
+                            configuration -->
+                            <onlyGetDriversForHostOperatingSystem>true</onlyGetDriversForHostOperatingSystem>
+                            <!-- Operating systems you want to download binaries for (Only valid 
+                            options are: windows, linux, osx) -->
+                            <operatingSystems>
+                                <windows>true</windows>
+                                <linux>false</linux>
+                                <mac>false</mac>
+                            </operatingSystems>
+                            <!-- Download 32bit binaries -->
+                            <thirtyTwoBitBinaries>true</thirtyTwoBitBinaries>
+                            <!-- Download 64bit binaries -->
+                            <sixtyFourBitBinaries>true</sixtyFourBitBinaries>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>selenium</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+        <!--DownloadSeleniumExtensions-->
+        <profile>
+            <id>DownloadSeleniumExtensions</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.webdriverextensions</groupId>
+                        <artifactId>webdriverextensions-maven-plugin</artifactId>
+                        <version>1.1.0</version>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>install-drivers</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <drivers>
+                                <driver>
+                                    <name>internetexplorerdriver</name>
+                                    <platform>windows</platform>
+                                    <bit>32</bit>
+                                    <version>2.46</version>
+                                </driver>
+                                <driver>
+                                    <name>internetexplorerdriver</name>
+                                    <platform>windows</platform>
+                                    <bit>64</bit>
+                                    <version>2.46</version>
+                                </driver>
+                                <driver>
+                                    <name>chromedriver</name>
+                                    <platform>windows</platform>
+                                    <bit>32</bit>
+                                    <version>2.17</version>
+                                </driver>
+                                <driver>
+                                    <name>chromedriver</name>
+                                    <platform>mac</platform>
+                                    <bit>32</bit>
+                                    <version>2.17</version>
+                                </driver>
+                                <driver>
+                                    <name>chromedriver</name>
+                                    <platform>linux</platform>
+                                    <bit>32</bit>
+                                    <version>2.17</version>
+                                </driver>
+                                <driver>
+                                    <name>chromedriver</name>
+                                    <platform>linux</platform>
+                                    <bit>64</bit>
+                                    <version>2.17</version>
+                                </driver>
+                            </drivers>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+
+
+
+
+
+
+        <!--Run_Chrome_Paylocity_Challenge_FeatureRunner-->
+        <profile>
+            <id>Run_Chrome_Paylocity_Challenge_FeatureRunner</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.16</version>
+                        <executions>
+                            <execution>
+                                <id>chrome</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <configuration>
+                                    <testFailureIgnore>true</testFailureIgnore>
+                                    <argLine>-DBrowserName=chrome -DBrowserVersion=latest
+                                        -DEnvironment=local -DOSPlatform=W7</argLine>
+                                    <includes>
+                                        <include>**/Paylocity_Challenge_FeatureRunner.class</include>
+                                    </includes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+                
+
+	
+		
+		
+		
+		
+		
+		
+        <!--Mail_Reports-->
+        <profile>
+            <id>Mail_Reports</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <id>ZipReports</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <delete
+                                            file="${basedir}/Automation Reports/LatestReports.zip" />
+                                        <echo message="entered target Zipping" />
+                                        <zip destfile="${basedir}/Automation Reports/LatestReports.zip">
+                                            <zipfileset dir="${basedir}/Automation Reports">
+                                                <include name="Latest Results/**" />
+                                            </zipfileset>
+                                        </zip>
+                                        <echo message="Completed Zipping" />
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.apache.ant</groupId>
+                                <artifactId>ant-jsch</artifactId>
+                                <version>1.9.4</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>ant-contrib</groupId>
+                                <artifactId>ant-contrib</artifactId>
+                                <version>20020829</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>ch.fortysix</groupId>
+                        <artifactId>maven-postman-plugin</artifactId>
+                        <version>0.1.6</version>
+                        <executions>
+                            <execution>
+                                <id>send a mail</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>send-mail</goal>
+                                </goals>
+                                <inherited>false</inherited>
+                                <configuration>
+                                    <from>Ascentisshannon@gmail.com</from>
+                                    <subject>Automation Report...</subject>
+                                    <failonerror>true</failonerror>
+                                    <mailhost>smtp.gmail.com</mailhost>
+                                    <mailport>465</mailport>
+                                    <mailssl>true</mailssl>
+                                    <mailAltConfig>true</mailAltConfig>
+                                    <mailuser>Ascentisshannon@gmail.com</mailuser>
+                                    <mailpassword>mnjhuy76</mailpassword>
+                                    <htmlMessage><![CDATA[<p>Hello, Attached are zipped Automation reports.</p>]]></htmlMessage>
+                                    <receivers>
+                                        <receiver>Shannon.higgins@ascentis.com</receiver>
+                                    </receivers>
+                                    <fileSets>
+                                        <fileSet>
+                                            <directory>${basedir}/Automation Reports</directory>
+                                            <includes>
+                                                <include>LatestReports.zip</include>
+                                            </includes>
+                                        </fileSet>
+                                    </fileSets>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+			
+		
+        <!--Cucumber_HtmlReports-->
+        <profile>
+            <id>Cucumber_HtmlReports</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <testFailureIgnore>true</testFailureIgnore>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>net.masterthought</groupId>
+                        <artifactId>maven-cucumber-reporting</artifactId>
+                        <version>0.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>execution</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <projectName>Selenium-Cucumber-Framework</projectName>
+                                    <outputDirectory>${basedir}/Automation Reports/Latest Results/cucumber-html-reports</outputDirectory>
+                                    <cucumberOutput>${basedir}/Automation Reports/Latest Results/Json Reports</cucumberOutput>
+                                    <enableFlashCharts>true</enableFlashCharts>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+
+    </profiles>
+		
+		
+
+
+    <name>PaylocityChallenge</name>
+</project>

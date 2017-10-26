@@ -1,0 +1,13 @@
+#Selenium specific parameters
+
+#IOS
+ChromeDriverPath=SeleniumDownloads/binaries/Mac/chromedriver
+FirefoxPath = SeleniumDownloads/binaries/Mac/geckodriver
+PhantomJSPath = SeleniumDownloads/binaries/Mac/phantomjs
+
+#GRID node urls
+nodeURLXP=http://10.0.2.15:5555/wd/hub
+
+
+screen_shot_dir=./target/
+dirName=./target/

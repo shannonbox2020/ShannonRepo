@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- @Para 'Environment' can be : Local or GRID -->
+<!-- @Para 'OSPlatform' can be : XP,MAC,W7,W8,VISTA,LINUX -->
+<!-- @Para 'BrowserName' can be : Firefox,Chrome,InternetExplorer -->
+<!-- @Para 'BrowserVersion' can be : version number of browser -->
+
+
+<suite name="Suite" parallel="classes" thread-count="1"
+	preserve-order="true">
+
+	<!-- parallel="tests" -->
+	<!-- Single Test -->
+
+
+	<test name="ascentis.LoginDemo">				
+		<packages>
+            <package name="runnerFiles.*"/>
+        </packages>
+	</test>	
+	
+	<!-- 
+
+	<test name="ascentis.LoginDemo.Chrome">
+
+		<parameter name="BrowserName" value="Chrome" />
+		<parameter name="Environment" value="local" />
+		<parameter name="OSPlatform" value="W7" />
+		<parameter name="BrowserVersion" value="Latest" />
+		<classes>
+			<class name="ascentis.LoginDemo" />
+		</classes>
+
+	</test>
+
+
+	<test name="ascentis.LoginDemo.InternetExplorer">
+
+		<parameter name="BrowserName" value="InternetExplorer" />
+		<parameter name="Environment" value="local" />
+		<parameter name="OSPlatform" value="W7" />
+		<parameter name="BrowserVersion" value="11" />
+		<classes>
+			<class name="ascentis.LoginDemo" />
+		</classes>
+
+	</test>
+
+ -->
+
+
+</suite>
+
+
+
+<!-- <suite name="Suite" parallel="tests" thread-count="3"> </suite> -->

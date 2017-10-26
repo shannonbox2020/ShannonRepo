@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+
+
+
+    <action>
+        <actionName>CUSTOM-clean</actionName>
+        <displayName>clean</displayName>
+        <goals>
+            <goal>clean:clean</goal>
+        </goals>
+    </action>
+
+
+
+    <action>
+        <actionName>CUSTOM-Run_Paylocity_Challenge_Tests_Chrome</actionName>
+        <displayName>Run_Paylocity_Challenge_Tests_Chrome</displayName>
+        <goals>
+            <goal>test</goal>
+        </goals>
+        <properties>
+            <host>file:///C:/Users/shiggins.BSA/Desktop/ShanP/Paylocity/login.html</host>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>Archive_Reports</activatedProfile>
+            <activatedProfile>Run_Chrome_Paylocity_Challenge_FeatureRunner</activatedProfile>
+            <activatedProfile>Cucumber_HtmlReports</activatedProfile>
+            <activatedProfile>Delete_TargetReports</activatedProfile>
+        </activatedProfiles>
+    </action>
+
+  </actions>
+

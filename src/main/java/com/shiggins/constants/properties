@@ -1,0 +1,9 @@
+
+sqlServerDBDriver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+sqlServerDBUrl=jdbc:sqlserver://192.168.80.73
+sqlServerDBUserId=
+sqlServerDBPassword=
+
+screen_shot_dir=./Automation Reports/Latest Results
+#dirName=./Automation Reports/Latest Results
+

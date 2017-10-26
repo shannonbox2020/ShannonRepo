@@ -1,0 +1,11 @@
+#Selenium specific parameters
+
+#Linux
+ChromeDriverPath=SeleniumDownloads/binaries/Linux/googlechrome/64bit/chromedriver
+
+
+#GRID node urls
+nodeURLXP=http://10.0.2.15:5555/wd/hub
+
+screen_shot_dir=./target/
+dirName=./target/
