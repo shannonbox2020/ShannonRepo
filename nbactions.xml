@@ -20,7 +20,7 @@
             <goal>test</goal>
         </goals>
         <properties>
-            <host>file:///C:/Users/shiggins.BSA/Desktop/ShanP/Paylocity/login.html</host>
+            <host>file:///C:/Users/Shann/Desktop/Paylocity/login.html</host>
         </properties>
         <activatedProfiles>
             <activatedProfile>Archive_Reports</activatedProfile>
