@@ -1,6 +1,7 @@
 # ShannonRepo
 
-I used a hybrid Java/Selenium/Cucumber/testNG/Mavenframework that I created in 2015.
+
+I used a hybrid Java/Selenium/Cucumber/testNG/Mavenframework that I created in 2017.
 <br />
 This project can be executed from command line using the following :  mvn test -P Archive_Reports,Run_Chrome_Paylocity_Challenge_FeatureRunner,Cucumber_HtmlReports,Delete_TargetReports -Dhost=file:///C:/pathto/Paylocity/login.html
 <br />
