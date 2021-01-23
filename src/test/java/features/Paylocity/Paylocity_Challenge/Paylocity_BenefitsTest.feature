@@ -1,5 +1,6 @@
 Feature: Paylocity Benefits Challenge QA Test
 
+
   Scenario: Add Employee -- no Discount -- zero Dependents
     Given an Employer
     And I am on the Benefits Dashboard page
